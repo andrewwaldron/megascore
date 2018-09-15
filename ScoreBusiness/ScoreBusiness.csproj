@@ -41,6 +41,7 @@
     <Compile Include="business\ScoreController.cs" />
     <Compile Include="data\GameScore.cs" />
     <Compile Include="data\ScoreEvent.cs" />
+    <Compile Include="enumeration\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

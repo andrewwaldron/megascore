@@ -2,6 +2,7 @@ namespace ScoreBusiness.data
 {
     public class GameScore
     {
-        public int CurrentScore { get; set; }
+        public int HomeScore { get; set; }
+        public int AwayScore { get; set; }
     }
 }

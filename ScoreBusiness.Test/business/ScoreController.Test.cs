@@ -1,5 +1,7 @@
 using NUnit.Framework;
 using ScoreBusiness.business;
+using ScoreBusiness.data;
+using ScoreBusiness.enumeration;
 
 namespace ScoreBusiness.Test.business
 {
@@ -15,9 +17,16 @@ namespace ScoreBusiness.Test.business
         }
         
         [Test]
-        public void DoesSomething()
+        public void ScoringThreePointsWorks()
         {
-            Assert.True(true);
+            var scoreEvent = new ScoreEvent
+            {
+                ScorePoints =  3,
+                ScoreTeam =  Team.Home
+            };
+            
+            subject.ApplyScoreEvent(scoreEvent);
+            Assert.AreEqual(3, subject.GetCurrentScore().HomeScore, "Expected home score to be three");
         }
     }
 }
