@@ -4,21 +4,21 @@ namespace ScoreBusiness.business
 {
     public class ScoreController
     {
-        private GameScore currentScore;
+        private readonly GameScore _currentScore;
 
         public ScoreController()
         {
-            currentScore = new GameScore();
+            _currentScore = new GameScore();
         }
         
         public void ApplyScoreEvent(ScoreEvent scoreEvent)
         {
-            currentScore.HomeScore += scoreEvent.ScorePoints;
+            _currentScore.HomeScore += scoreEvent.ScorePoints;
         }
 
         public GameScore GetCurrentScore()
         {
-            return currentScore;
+            return _currentScore;
         }
     }
 }
