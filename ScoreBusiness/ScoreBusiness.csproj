@@ -38,9 +38,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="business\Score.cs" />
-    <Compile Include="domain\ScoreController.cs" />
-    <Compile Include="domain\ScoreEvent.cs" />
+    <Compile Include="business\ScoreController.cs" />
+    <Compile Include="data\GameScore.cs" />
+    <Compile Include="data\ScoreEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

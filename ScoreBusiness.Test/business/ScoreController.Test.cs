@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using ScoreBusiness.domain;
+using ScoreBusiness.business;
 
 namespace ScoreBusiness.Test.business
 {

@@ -1,4 +1,4 @@
-namespace ScoreBusiness.business
+namespace ScoreBusiness.data
 {
     public class GameScore
     {

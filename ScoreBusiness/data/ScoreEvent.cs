@@ -1,4 +1,4 @@
-namespace ScoreBusiness.domain
+namespace ScoreBusiness.data
 {
     public class ScoreEvent
     {
