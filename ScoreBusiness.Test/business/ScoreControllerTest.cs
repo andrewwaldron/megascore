@@ -69,7 +69,7 @@ namespace ScoreBusiness.Test.business
 
             Assert.AreEqual(positiveScoreEvent, _subject.GetScoreHistory()[0]);
             Assert.AreEqual(negativeScoreEvent, _subject.GetScoreHistory()[1]);
-            Assert.AreEqual(3, _subject.GetScoreHistory().Count);
+            Assert.AreEqual(2, _subject.GetScoreHistory().Count);
         }
     }
 }
