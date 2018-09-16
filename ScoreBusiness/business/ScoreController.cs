@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ScoreBusiness.data;
 using ScoreBusiness.enumeration;
@@ -17,6 +18,8 @@ namespace ScoreBusiness.business
         
         public void ApplyScoreEvent(ScoreEvent scoreEvent)
         {
+            validateScoreEvent(scoreEvent);
+            
             _scoreHistory.Add(scoreEvent);
             
             if (scoreEvent.ScoreTeam == Team.Home)
@@ -27,6 +30,12 @@ namespace ScoreBusiness.business
             {
                 _currentScore.AwayScore += scoreEvent.ScorePoints;
             }
+        }
+
+        private void validateScoreEvent(ScoreEvent scoreEvent)
+        {
+            if (scoreEvent.ScorePoints >= 4)
+                throw new Exception("InvalidEvent: Score Must Be Less Than 4");
         }
 
         public GameScore GetCurrentScore()

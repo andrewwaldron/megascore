@@ -71,5 +71,13 @@ namespace ScoreBusiness.Test.business
             Assert.AreEqual(negativeScoreEvent, _subject.GetScoreHistory()[1]);
             Assert.AreEqual(2, _subject.GetScoreHistory().Count);
         }
+
+        [Test]
+        public void InvalidScoreEventThrowExceptions()
+        {
+            var invalidScoreEvent = new ScoreEvent { ScorePoints = 4, ScoreTeam =  Team.Away };
+
+            Assert.Throws<System.Exception>(() => { _subject.ApplyScoreEvent(invalidScoreEvent); });
+        }
     }
 }
