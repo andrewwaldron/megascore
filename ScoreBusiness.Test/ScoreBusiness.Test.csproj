@@ -42,8 +42,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="business\ScoreControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoreControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ScoreBusiness\ScoreBusiness.csproj">

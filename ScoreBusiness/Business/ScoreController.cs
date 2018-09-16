@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using ScoreBusiness.data;
-using ScoreBusiness.enumeration;
+using ScoreBusiness.Data;
+using ScoreBusiness.Enumeration;
 
-namespace ScoreBusiness.business
+namespace ScoreBusiness.Business
 {
     public class ScoreController
     {
@@ -18,21 +18,14 @@ namespace ScoreBusiness.business
         
         public void ApplyScoreEvent(ScoreEvent scoreEvent)
         {
-            validateScoreEvent(scoreEvent);
+            ValidateScoreEvent(scoreEvent);
             
             _scoreHistory.Add(scoreEvent);
             
-            if (scoreEvent.ScoreTeam == Team.Home)
-            {
-                _currentScore.HomeScore += scoreEvent.ScorePoints;
-            }
-            else
-            {
-                _currentScore.AwayScore += scoreEvent.ScorePoints;
-            }
+            _currentScore[scoreEvent.ScoreTeam] += scoreEvent.ScorePoints;
         }
 
-        private void validateScoreEvent(ScoreEvent scoreEvent)
+        private static void ValidateScoreEvent(ScoreEvent scoreEvent)
         {
             if (scoreEvent.ScorePoints >= 4)
                 throw new Exception("InvalidEvent: Score Must Be Less Than 4");

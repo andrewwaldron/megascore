@@ -38,10 +38,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="business\ScoreController.cs" />
-    <Compile Include="data\GameScore.cs" />
-    <Compile Include="data\ScoreEvent.cs" />
-    <Compile Include="enumeration\Team.cs" />
+    <Compile Include="Business\ScoreController.cs" />
+    <Compile Include="Data\GameScore.cs" />
+    <Compile Include="Data\ScoreEvent.cs" />
+    <Compile Include="Enumeration\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

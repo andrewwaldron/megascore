@@ -1,4 +1,4 @@
-namespace ScoreBusiness.enumeration
+namespace ScoreBusiness.Enumeration
 {
     public enum Team
     {

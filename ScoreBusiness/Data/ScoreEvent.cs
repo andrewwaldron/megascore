@@ -1,6 +1,6 @@
-using ScoreBusiness.enumeration;
+using ScoreBusiness.Enumeration;
 
-namespace ScoreBusiness.data
+namespace ScoreBusiness.Data
 {
     public class ScoreEvent
     {
