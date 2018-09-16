@@ -36,7 +36,7 @@ namespace ScoreBusiness.Test
             _subject.ApplyScoreEvent(scoreEvent);
 
             var currentScore = _subject.GetCurrentScore();
-            Assert.AreEqual(2, currentScore[Team.Away]);
+            Assert.AreEqual(3, currentScore[Team.Away]);
             Assert.AreEqual(0, currentScore[Team.Home]);
         }
 
