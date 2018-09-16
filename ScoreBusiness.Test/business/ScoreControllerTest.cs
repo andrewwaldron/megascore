@@ -42,7 +42,34 @@ namespace ScoreBusiness.Test.business
             _subject.ApplyScoreEvent(scoreEvent);
             Assert.AreEqual(2, _subject.GetCurrentScore().AwayScore, "Expected away score to be two");
             Assert.AreEqual(0, _subject.GetCurrentScore().HomeScore, "Expected home score to be zero");
+        }
 
+        [Test]
+        public void ScoringNegativePointsWorks()
+        {
+            var positiveScoreEvent = new ScoreEvent { ScorePoints =  2, ScoreTeam =  Team.Away };
+            _subject.ApplyScoreEvent(positiveScoreEvent);
+            
+            var negativeScoreEvent = new ScoreEvent { ScorePoints =  -1, ScoreTeam =  Team.Away };
+            _subject.ApplyScoreEvent(negativeScoreEvent);
+            
+            Assert.AreEqual(1, _subject.GetCurrentScore().AwayScore, "Expected away score to be one");
+            Assert.AreEqual(0, _subject.GetCurrentScore().HomeScore, "Expected home score to be zero");
+
+        }
+
+        [Test]
+        public void ScoreEventsAreStoredInOrder()
+        {
+            var positiveScoreEvent = new ScoreEvent { ScorePoints =  2, ScoreTeam =  Team.Away };
+            var negativeScoreEvent = new ScoreEvent { ScorePoints =  -1, ScoreTeam =  Team.Away };
+            
+            _subject.ApplyScoreEvent(positiveScoreEvent);
+            _subject.ApplyScoreEvent(negativeScoreEvent);
+
+            Assert.AreEqual(positiveScoreEvent, _subject.GetScoreHistory()[0]);
+            Assert.AreEqual(negativeScoreEvent, _subject.GetScoreHistory()[1]);
+            Assert.AreEqual(3, _subject.GetScoreHistory().Count);
         }
     }
 }
