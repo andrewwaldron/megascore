@@ -1,4 +1,5 @@
 using ScoreBusiness.data;
+using ScoreBusiness.enumeration;
 
 namespace ScoreBusiness.business
 {
@@ -13,7 +14,14 @@ namespace ScoreBusiness.business
         
         public void ApplyScoreEvent(ScoreEvent scoreEvent)
         {
-            _currentScore.HomeScore += scoreEvent.ScorePoints;
+            if (scoreEvent.ScoreTeam == Team.Home)
+            {
+                _currentScore.HomeScore += scoreEvent.ScorePoints;
+            }
+            else
+            {
+                _currentScore.AwayScore += scoreEvent.ScorePoints;
+            }
         }
 
         public GameScore GetCurrentScore()
